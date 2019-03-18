@@ -11,6 +11,7 @@ param = struct(...
     'seqA',     [1 4 2 3 1], ...                    % sequence A to execute
     'nbBlocksDayOne',            10, ...                  % number of blocs during task
     'nbBlocksDayTwo',            8, ...                  % number of blocs during task
+    'nbBlocks',            14, ...                  % number of blocs during task
     'nbKeys',              60, ...                  % number of keys during task
     'IntroNbSeq',           3, ...                  % nb of sequences for pre-training    
     'durRest',             25,...                   %  Duration of the Rest period

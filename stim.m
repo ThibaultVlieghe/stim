@@ -201,7 +201,7 @@ set(handles.editNbBlocks, 'String', num2str(param.nbBlocks));
 set(handles.editNbKeys, 'String', num2str(param.nbKeys));
 
 set(handles.editSeqA, 'String', num2str(param.seqA));
-set(handles.editSeqB, 'String', num2str(param.seqB));
+% set(handles.editSeqB, 'String', num2str(param.seqB));
 
 set(handles.editdurRest, 'String', num2str(param.durRest));
 set(handles.editIntroNbSeq, 'String', num2str(param.IntroNbSeq));

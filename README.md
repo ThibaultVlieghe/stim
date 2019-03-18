@@ -15,3 +15,16 @@ Stimulation program using matlab for MSL task
 6 - Press 5 to start the verification
 
 7 - Press a, b, c, and d to emulate 1, 2, 3, 4
+
+
+Learning => verification-Intro-Task1-Task2-Testing
+Consolidation => verification-Testing
+Reconsolidation => verification-Testing
+
+if output deos not exist create it
+
+Task -> 14 blocks 60 appuis 25 rest
+Task1 Task2 - sequence différentes
+Testing -> 1 seqA block 60 keys 25 rest
+
+Menu pour changer de main - main guide

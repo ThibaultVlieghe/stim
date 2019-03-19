@@ -22,6 +22,7 @@ switch D_EXPERIMENT
                            'Intro',...
                            'Task1',...
                            'Task2',...
+                           'Testing',...
                            'Quit'...
                            );
             sessionName = D_EXPERIMENT;
@@ -36,25 +37,29 @@ switch D_EXPERIMENT
                     ld_intro(param);
                 case 4
                     param.task = ['Task - ', 'Condition_A'];
-                    % ^ Attention: solution très artificielle et dangereuse en terme de confusion
+                    % ^ Attention: solution très artificielle et dangereuse en termes de confusion
                     % à modifier
                     ld_task(param);
                 case 5
                     param.task = ['Task - ', 'Condition_B'];
-                    % ^ Attention: solution très artificielle et dangereuse en terme de confusion
+                    % ^ Attention: solution très artificielle et dangereuse en termes de confusion
                     % à modifier
                     ld_task(param);
                 case 6
+                    param.task = ['Task - ', 'Testing'];
+                    % to implement yet
+                    ld_task(param);
+                case 7
                     break;
             end
         end
-    case 'Condition_B'
+    otherwise
         while nextMenu
             choice = menu(...
                            strcat('Menu - ', D_EXPERIMENT),...
                            'Rest', ...  
                            'Verification',...
-                           'Task',...
+                           'Testing',...
                            'Quit'...
                            );
             sessionName = D_EXPERIMENT;
@@ -63,9 +68,10 @@ switch D_EXPERIMENT
                     ld_rest(param);
                 case 2           
                     param.task = ['Verification - ', sessionName];
-                    ld_verification(param);     
+                    ld_verification(param);
                 case 3
-                    param.task = ['Task - ', sessionName];
+                    param.task = ['Task - ', 'Testing'];
+                    % to implement yet
                     ld_task(param);
                 case 4
                     break

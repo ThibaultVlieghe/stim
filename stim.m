@@ -54,7 +54,6 @@ if ~exist(p1, 'dir')
 end
 addpath(strcat(p,'stimuli'))
 addpath(strcat(p,'experiments'))
-Screen('Preference', 'SkipSyncTests', 1)
 
 % --- Executes just before stim is made visible.
 function stim_OpeningFcn(hObject, eventdata, handles, varargin)
@@ -69,6 +68,10 @@ handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
+
+handles.button_CondA.String = 'Learning';
+handles.button_CondB.String = 'Consolidation';
+handles.button_CondC.String = 'Reconsolidation';
 
 % UIWAIT makes stim wait for user response (see UIRESUME)
 % uiwait(handles.figure1);

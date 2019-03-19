@@ -44,25 +44,34 @@ Screen('TextSize',window, 40);
 gold = [255,215,0,255];
 
 % Get information about the sequence: TSeq or IntSeq
-if strfind(param.task,'Day_One')
-    l_nbBlock = param.nbBlocksDayOne;
-elseif strfind(param.task, 'Day_Two')
-    l_nbBlock = param.nbBlocksDayTwo;
-else
-    error(strcat('No information is available for the task >>> ', param.task, ' >>> CHECK!!!'));
-end
+% if strfind(param.task,'Day_One')
+%     l_nbBlock = param.nbBlocksDayOne;
+% elseif strfind(param.task, 'Day_Two')
+%     l_nbBlock = param.nbBlocksDayTwo;
+% else
+%     error(strcat('No information is available for the task >>> ', param.task, ' >>> CHECK!!!'));
+% end
+% EDIT:
+l_nbBlock = 2;
+% EDIT: end of
 
 % Get information about the task
-l_nbKey = param.nbKeys;
-
+% l_nbKey = param.nbKeys;
+l_nbKey = 20;
 % l_seqUsed = param.seqA;
 % Edit suggestion :
 if strfind(param.task,'Condition_A')
     l_seqUsed = param.seqA;
 elseif strfind(param.task,'Condition_B')
-    l_seqUsed = param.seqB;
+    % l_seqUsed = param.seqB; % Doesn't work
+    l_seqUsed = [1 2 3 4 1];
+elseif strfind(param.task,'Testing')
+    l_seqUsed = param.seqA;
+    l_nbBlock = 1;
+    l_nbKey = 40;
+    OriginalDurRest = param.durRest;
+    param.durRest = 10;
 end
-
 
 disp ('-------------------------------------------------------------------------------------------');
 disp(['The task ' param.task]);
@@ -214,3 +223,7 @@ savefile(param, logoriginal, onset);
 Screen('CloseAll');
 disp('!!! FINISHED !!!');
 returnCode = 0;
+
+if strfind(param.task,'Testing')
+    param.durRest = OriginalDurRest;
+end

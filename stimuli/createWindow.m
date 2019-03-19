@@ -6,7 +6,7 @@ function window = createWindow(param)
     % % open, and will print out a fair amount of detailed information when
     % % it does.  These commands supress that checking behavior.
     % Disable error message be carreful    
-    %Screen('Preference', 'SkipSyncTests', 1);
+    Screen('Preference', 'SkipSyncTests', 1);
     %Screen('Preference', 'SkipSyncTests', 1);
     Screen('Preference', 'VisualDebugLevel', 3);
     Screen('Preference', 'SuppressAllWarnings', 1);
@@ -44,6 +44,7 @@ function window = createWindow(param)
         PsychImaging('AddTask','AllViews','FlipHorizontal');
         window = PsychImaging('OpenWindow', whichScreen, [], resolution);
     else
+%         Screen('Preference', 'SkipSyncTests', 1);
         window = Screen('OpenWindow', whichScreen, [], resolution); % full size window
     end
     %%%%%%

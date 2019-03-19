@@ -9,6 +9,7 @@ param = struct(...
     'rawDir', HOME, ... 
     'outputDir',          [HOME, 'output', filesep], ...      % output directory to save data (onset and .mat)
     'seqA',     [1 4 2 3 1], ...                    % sequence A to execute
+    'seqB',     [1 2 3 4 1], ...                % EDIT: sequence B to execute
     'nbBlocksDayOne',            10, ...                  % number of blocs during task
     'nbBlocksDayTwo',            8, ...                  % number of blocs during task
     'nbBlocks',            14, ...                  % number of blocs during task

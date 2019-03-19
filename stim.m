@@ -43,6 +43,18 @@ else
 end
 % End initialization code - DO NOT EDIT
 
+% Suggestion for additional initialization code
+% Create output directory if it doesn't exist already
+p = mfilename('fullpath'); % get  full path and name of the file
+f = mfilename(); % get name of file
+p = p(1:end-length(f)); % delete name of the file in order to obtain just the full path
+p1 = strcat(p,'output'); % location of the output directory
+if ~exist(p1, 'dir')
+    mkdir(p1) % create if it doesn't exists
+end
+addpath(strcat(p,'stimuli'))
+addpath(strcat(p,'experiments'))
+Screen('Preference', 'SkipSyncTests', 1)
 
 % --- Executes just before stim is made visible.
 function stim_OpeningFcn(hObject, eventdata, handles, varargin)
@@ -138,6 +150,7 @@ function button_CondA_Callback(hObject, eventdata, handles)
 % hObject    handle to buttonStart (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+% !!! modification !!! : condition A will now become Learning
 
 global D_EXPERIMENT;
 D_EXPERIMENT = 'Condition_A';
@@ -152,7 +165,7 @@ function button_CondB_Callback(hObject, eventdata, handles)
 global D_EXPERIMENT;
 D_EXPERIMENT = 'Condition_B';
 Start_experiment(D_EXPERIMENT,handles)
-        
+
 % --- Executes on button press in buttonResults
 function button_CondC_Callback(hObject, eventdata, handles)
 % hObject    handle to buttonStart (see GCBO)

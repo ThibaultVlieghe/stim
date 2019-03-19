@@ -40,7 +40,7 @@ standard = 0;
 
 % Display first instruction
 Screen('TextFont',window,'Arial');
-Screen('TextSize',window, 40); 
+Screen('TextSize',window, 40);
 gold = [255,215,0,255];
 
 % Get information about the sequence: TSeq or IntSeq
@@ -54,7 +54,16 @@ end
 
 % Get information about the task
 l_nbKey = param.nbKeys;
-l_seqUsed = param.seqA;
+
+% l_seqUsed = param.seqA;
+% Edit suggestion :
+if strfind(param.task,'Condition_A')
+    l_seqUsed = param.seqA;
+elseif strfind(param.task,'Condition_B')
+    l_seqUsed = param.seqB;
+end
+
+
 disp ('-------------------------------------------------------------------------------------------');
 disp(['The task ' param.task]);
 disp(['The sequence ' num2str(l_seqUsed)]);

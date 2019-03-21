@@ -68,10 +68,11 @@ handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
-
 handles.button_CondA.String = 'Learning';
-handles.button_CondB.String = 'Consolidation';
-handles.button_CondC.String = 'Reconsolidation';
+delete(handles.button_CondB);
+delete(handles.button_CondC);
+% handles.button_CondB.String = 'Consolidation';
+% handles.button_CondC.String = 'Reconsolidation';
 
 % UIWAIT makes stim wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
@@ -160,24 +161,24 @@ D_EXPERIMENT = 'Condition_A';
 Start_experiment(D_EXPERIMENT,handles)
 
 % --- Executes on button press in buttonResults
-function button_CondB_Callback(hObject, eventdata, handles)
-% hObject    handle to buttonStart (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-global D_EXPERIMENT;
-D_EXPERIMENT = 'Condition_B';
-Start_experiment(D_EXPERIMENT,handles)
+% function button_CondB_Callback(hObject, eventdata, handles)
+% % hObject    handle to buttonStart (see GCBO)
+% % eventdata  reserved - to be defined in a future version of MATLAB
+% % handles    structure with handles and user data (see GUIDATA)
+% 
+% global D_EXPERIMENT;
+% D_EXPERIMENT = 'Condition_B';
+% Start_experiment(D_EXPERIMENT,handles)
 
 % --- Executes on button press in buttonResults
-function button_CondC_Callback(hObject, eventdata, handles)
-% hObject    handle to buttonStart (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-global D_EXPERIMENT;
-D_EXPERIMENT = 'Condition_C';
-Start_experiment(D_EXPERIMENT,handles)
+% function button_CondC_Callback(hObject, eventdata, handles)
+% % hObject    handle to buttonStart (see GCBO)
+% % eventdata  reserved - to be defined in a future version of MATLAB
+% % handles    structure with handles and user data (see GUIDATA)
+% 
+% global D_EXPERIMENT;
+% D_EXPERIMENT = 'Condition_C';
+% Start_experiment(D_EXPERIMENT,handles)
         
 % --- Executes on button press in buttonResults
 function buttonResults_Callback(hObject, eventdata, handles)
@@ -204,8 +205,8 @@ function setExperimentButton(handles)
 
 % Buttons and panel properties
 set(handles.button_CondA, 'FontWeight', 'normal');
-set(handles.button_CondB, 'FontWeight', 'normal');
-set(handles.button_CondC, 'FontWeight', 'normal');
+% set(handles.button_CondB, 'FontWeight', 'normal');
+% set(handles.button_CondC, 'FontWeight', 'normal');
 set(handles.uipanel_stim_Project, 'Visible', 'off');
 
 % Get param from application data collection

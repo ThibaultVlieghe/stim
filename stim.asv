@@ -54,7 +54,6 @@ if ~exist(p1, 'dir')
 end
 addpath(strcat(p,'stimuli'))
 addpath(strcat(p,'experiments'))
-hand
 
 % --- Executes just before stim is made visible.
 function stim_OpeningFcn(hObject, eventdata, handles, varargin)
@@ -69,6 +68,10 @@ handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
+handles.button_CondA.String = 'Learning';
+delet
+% handles.button_CondB.String = 'Consolidation';
+% handles.button_CondC.String = 'Reconsolidation';
 
 % UIWAIT makes stim wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
@@ -157,24 +160,24 @@ D_EXPERIMENT = 'Condition_A';
 Start_experiment(D_EXPERIMENT,handles)
 
 % --- Executes on button press in buttonResults
-function button_CondB_Callback(hObject, eventdata, handles)
-% hObject    handle to buttonStart (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-global D_EXPERIMENT;
-D_EXPERIMENT = 'Condition_B';
-Start_experiment(D_EXPERIMENT,handles)
+% function button_CondB_Callback(hObject, eventdata, handles)
+% % hObject    handle to buttonStart (see GCBO)
+% % eventdata  reserved - to be defined in a future version of MATLAB
+% % handles    structure with handles and user data (see GUIDATA)
+% 
+% global D_EXPERIMENT;
+% D_EXPERIMENT = 'Condition_B';
+% Start_experiment(D_EXPERIMENT,handles)
 
 % --- Executes on button press in buttonResults
-function button_CondC_Callback(hObject, eventdata, handles)
-% hObject    handle to buttonStart (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-global D_EXPERIMENT;
-D_EXPERIMENT = 'Condition_C';
-Start_experiment(D_EXPERIMENT,handles)
+% function button_CondC_Callback(hObject, eventdata, handles)
+% % hObject    handle to buttonStart (see GCBO)
+% % eventdata  reserved - to be defined in a future version of MATLAB
+% % handles    structure with handles and user data (see GUIDATA)
+% 
+% global D_EXPERIMENT;
+% D_EXPERIMENT = 'Condition_C';
+% Start_experiment(D_EXPERIMENT,handles)
         
 % --- Executes on button press in buttonResults
 function buttonResults_Callback(hObject, eventdata, handles)

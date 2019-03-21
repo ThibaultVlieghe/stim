@@ -51,26 +51,23 @@ gold = [255,215,0,255];
 % else
 %     error(strcat('No information is available for the task >>> ', param.task, ' >>> CHECK!!!'));
 % end
-% EDIT:
-l_nbBlock = 2;
-% EDIT: end of
 
 % Get information about the task
-% l_nbKey = param.nbKeys;
-l_nbKey = 20;
+l_nbKey = param.nbKeys;
+l_nbBlock = param.nbBlocks;
+
 % l_seqUsed = param.seqA;
 % Edit suggestion :
-if strfind(param.task,'Condition_A')
+if strfind(param.task,'Condition_A') % to replace by task 1 to avoid confusion
     l_seqUsed = param.seqA;
-elseif strfind(param.task,'Condition_B')
-    % l_seqUsed = param.seqB; % Doesn't work
-    l_seqUsed = [1 2 3 4 1];
+elseif strfind(param.task,'Condition_B') % to replace by task 2 to avoid confusion
+    l_seqUsed = param.seqB;
 elseif strfind(param.task,'Testing')
     l_seqUsed = param.seqA;
     l_nbBlock = 1;
-    l_nbKey = 40;
+    l_nbKey = 60;
     OriginalDurRest = param.durRest;
-    param.durRest = 10;
+    param.durRest = 25;
 end
 
 disp ('-------------------------------------------------------------------------------------------');
@@ -224,6 +221,6 @@ Screen('CloseAll');
 disp('!!! FINISHED !!!');
 returnCode = 0;
 
-if strfind(param.task,'Testing')
+if strfind(param.task,'Testing') % ////////////////////////////////////////
     param.durRest = OriginalDurRest;
 end

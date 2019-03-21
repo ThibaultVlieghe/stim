@@ -38,7 +38,7 @@ while nextMenu
         case 3
             break;
     end
-    ld_menuCond(param)
+    ld_menuHand(param)
 end
 
 clear;

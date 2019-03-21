@@ -31,12 +31,12 @@ while nextMenu
             param.task = ['Intro - ', sessionName];
             ld_intro(param);
         case 3
-            param.task = ['Task - ', 'Condition_A'];
+            param.task = ['Task - ', 'Condition_A']; % to replace by task 1 to avoid confusion
             % ^ Attention: solution très artificielle et dangereuse en termes de confusion
             % à modifier
             ld_task(param);
         case 4
-            param.task = ['Task - ', 'Condition_B'];
+            param.task = ['Task - ', 'Condition_B']; % to replace by task 2 to avoid confusion
             % ^ Attention: solution très artificielle et dangereuse en termes de confusion
             % à modifier
             ld_task(param);

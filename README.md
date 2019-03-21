@@ -25,6 +25,6 @@ if output deos not exist create it
 
 Task -> 14 (finalement 2 pour accélérer la phase de test) blocks 60 (finalement 20) appuis 25 (2) rest
 Task1 Task2 - sequence différentes
-Testing -> 1 seqA block 60 (40) keys 25 (10) rest
+Testing -> 1 seqA block 60 keys 25 rest
 
 Menu pour changer de main - main guide

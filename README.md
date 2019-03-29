@@ -1,5 +1,6 @@
 # stim
 # author: arnaud.bore@gmail.com
+# contributor: Thibault Vlieghe
 Stimulation program using matlab for MSL task
 
 1 - Add stim to matlab path
@@ -16,15 +17,12 @@ Stimulation program using matlab for MSL task
 
 7 - Press a, b, c, and d to emulate 1, 2, 3, 4
 
-
-Learning => verification-Intro-Task1-Task2-Testing
-Consolidation => verification-Testing
-Reconsolidation => verification-Testing
-
-if output deos not exist create it
-
-Task -> 14 (finalement 2 pour accélérer la phase de test) blocks 60 (finalement 20) appuis 25 (2) rest
-Task1 Task2 - sequence différentes
-Testing -> 1 seqA block 60 keys 25 rest
+To-do:
 
 Menu pour changer de main - main guide
+
+Day One:
+- Learning 16 blocks 60 appuis seqA
+- Test 4 blocks 60 appuis seq A
+Day Two
+- Test 4 blocks seq A

@@ -58,16 +58,11 @@ l_nbBlock = param.nbBlocks;
 
 % l_seqUsed = param.seqA;
 % Edit suggestion :
-if strfind(param.task,'Condition_A') % to replace by task 1 to avoid confusion
+if strfind(param.task,'Task')
     l_seqUsed = param.seqA;
-elseif strfind(param.task,'Condition_B') % to replace by task 2 to avoid confusion
-    l_seqUsed = param.seqB;
 elseif strfind(param.task,'Testing')
     l_seqUsed = param.seqA;
-    l_nbBlock = 1;
-    l_nbKey = 60;
-    OriginalDurRest = param.durRest;
-    param.durRest = 25;
+    
 end
 
 disp ('-------------------------------------------------------------------------------------------');
@@ -220,7 +215,3 @@ savefile(param, logoriginal, onset);
 Screen('CloseAll');
 disp('!!! FINISHED !!!');
 returnCode = 0;
-
-if strfind(param.task,'Testing') % ////////////////////////////////////////
-    param.durRest = OriginalDurRest;
-end

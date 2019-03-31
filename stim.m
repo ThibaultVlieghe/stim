@@ -43,7 +43,7 @@ else
 end
 % End initialization code - DO NOT EDIT
 
-% Suggestion for additional initialization code
+% Additional initialization code
 % Create output directory if it doesn't exist already
 p = mfilename('fullpath'); % get  full path and name of the file
 f = mfilename(); % get name of file
@@ -54,6 +54,7 @@ if ~exist(p1, 'dir')
 end
 addpath(strcat(p,'stimuli'))
 addpath(strcat(p,'experiments'))
+% end of
 
 % --- Executes just before stim is made visible.
 function stim_OpeningFcn(hObject, eventdata, handles, varargin)
@@ -68,9 +69,7 @@ handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
-handles.button_CondA.String = 'Learning';
-delete(handles.button_CondB);
-delete(handles.button_CondC);
+
 % handles.button_CondB.String = 'Consolidation';
 % handles.button_CondC.String = 'Reconsolidation';
 
@@ -150,35 +149,25 @@ ld_menuExperiment(param)
 
 
 % --- Executes on button press in buttonResults
-function button_CondA_Callback(hObject, eventdata, handles)
+function button_Day1_Callback(hObject, eventdata, handles)
 % hObject    handle to buttonStart (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% !!! modification !!! : condition A will now become Learning
-
+% !!! modification !!! : condition A will now become Day 1
+a=1
 global D_EXPERIMENT;
-D_EXPERIMENT = 'Condition_A';
+D_EXPERIMENT = 'Day_1';
 Start_experiment(D_EXPERIMENT,handles)
 
 % --- Executes on button press in buttonResults
-% function button_CondB_Callback(hObject, eventdata, handles)
-% % hObject    handle to buttonStart (see GCBO)
-% % eventdata  reserved - to be defined in a future version of MATLAB
-% % handles    structure with handles and user data (see GUIDATA)
-% 
-% global D_EXPERIMENT;
-% D_EXPERIMENT = 'Condition_B';
-% Start_experiment(D_EXPERIMENT,handles)
+function button_Day2_Callback(hObject, eventdata, handles)
+% hObject    handle to buttonStart (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+global D_EXPERIMENT;
+D_EXPERIMENT = 'Day_2';
+Start_experiment(D_EXPERIMENT,handles)
 
-% --- Executes on button press in buttonResults
-% function button_CondC_Callback(hObject, eventdata, handles)
-% % hObject    handle to buttonStart (see GCBO)
-% % eventdata  reserved - to be defined in a future version of MATLAB
-% % handles    structure with handles and user data (see GUIDATA)
-% 
-% global D_EXPERIMENT;
-% D_EXPERIMENT = 'Condition_C';
-% Start_experiment(D_EXPERIMENT,handles)
         
 % --- Executes on button press in buttonResults
 function buttonResults_Callback(hObject, eventdata, handles)
@@ -204,8 +193,6 @@ close;
 function setExperimentButton(handles)
 
 % Buttons and panel properties
-set(handles.button_CondA, 'FontWeight', 'normal');
-% set(handles.button_CondB, 'FontWeight', 'normal');
 % set(handles.button_CondC, 'FontWeight', 'normal');
 set(handles.uipanel_stim_Project, 'Visible', 'off');
 

@@ -17,8 +17,7 @@ while nextMenu
                    strcat('Menu - ', D_EXPERIMENT),...
                    'Verification',...
                    'Intro',...
-                   'Task1',...
-                   'Task2',...
+                   'Task',...
                    'Testing',...
                    'Quit'...
                    );
@@ -31,16 +30,9 @@ while nextMenu
             param.task = ['Intro - ', sessionName];
             ld_intro(param);
         case 3
-            param.task = ['Task - ', 'Condition_A']; % to replace by task 1 to avoid confusion
-            % ^ Attention: solution très artificielle et dangereuse en termes de confusion
-            % à modifier
+            param.task = ['Task - ', 'Task'];
             ld_task(param);
         case 4
-            param.task = ['Task - ', 'Condition_B']; % to replace by task 2 to avoid confusion
-            % ^ Attention: solution très artificielle et dangereuse en termes de confusion
-            % à modifier
-            ld_task(param);
-        case 5
             param.task = ['Task - ', 'Testing'];
             % to implement yet
             ld_task(param);

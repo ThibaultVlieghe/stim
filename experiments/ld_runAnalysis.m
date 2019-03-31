@@ -18,15 +18,12 @@ if fname == 0
 end
 load(strcat(path,fname));
 
-if strfind(fname,'Condition_A')
+if strfind(fname,'Day_1')
     param.sequence = param.seqA; %#ok<NODEF>
     param.task = 'Task Sequence A';
-elseif strfind(fname,'Condition_B')
+elseif strfind(fname,'Day_2')
     param.sequence = param.seqB; %#ok<NODEF>
     param.task = 'Task Sequence B';
-elseif strfind(fname,'Condition_C')
-    msgbox('Analysis for Condition_C have not been implemented yet')
-    return
 end
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

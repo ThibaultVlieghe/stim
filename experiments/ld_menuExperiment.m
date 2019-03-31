@@ -29,7 +29,7 @@ param.title = 'stim';
 nextMenu = 1;
 while nextMenu
     
-    choice = menu('Language','Francais','English','Quit');
+    choice = menu('Language / Langue','Francais','English','Quit');
     switch choice
         case 1
             param.language = 1;

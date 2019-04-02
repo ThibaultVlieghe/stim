@@ -43,17 +43,6 @@ else
 end
 % End initialization code - DO NOT EDIT
 
-% Suggestion for additional initialization code
-% Create output directory if it doesn't exist already
-p = mfilename('fullpath'); % get  full path and name of the file
-f = mfilename(); % get name of file
-p = p(1:end-length(f)); % delete name of the file in order to obtain just the full path
-p1 = strcat(p,'output'); % location of the output directory
-if ~exist(p1, 'dir')
-    mkdir(p1) % create if it doesn't exists
-end
-addpath(strcat(p,'stimuli'))
-addpath(strcat(p,'experiments'))
 
 % --- Executes just before stim is made visible.
 function stim_OpeningFcn(hObject, eventdata, handles, varargin)
@@ -82,6 +71,16 @@ global HOME;
 EXPERIMENT = 'stim Project';
 HOME = which('stim');
 HOME = HOME(1:length(HOME)-6);
+
+% Create Output directory if it doesn't exists
+outputDir = strcat(HOME,'output');
+if ~exist(outputDir, 'dir')
+    mkdir(outputDir) % create output dir
+end
+
+% add stimuli/ and experiments/ to the MATLAB path
+addpath(strcat(HOME,'stimuli'))
+addpath(strcat(HOME,'experiments'))
 
 % --- TO RUN ONLY ONE DESIGN --- %
 % --- should be removed if stim_ChooseDesign is used

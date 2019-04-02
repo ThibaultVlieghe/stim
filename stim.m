@@ -43,18 +43,6 @@ else
 end
 % End initialization code - DO NOT EDIT
 
-% Additional initialization code
-% Create output directory if it doesn't exist already
-p = mfilename('fullpath'); % get  full path and name of the file
-f = mfilename(); % get name of file
-p = p(1:end-length(f)); % delete name of the file in order to obtain just the full path
-p1 = strcat(p,'output'); % location of the output directory
-if ~exist(p1, 'dir')
-    mkdir(p1) % create if it doesn't exists
-end
-addpath(strcat(p,'stimuli'))
-addpath(strcat(p,'experiments'))
-% end of
 
 % --- Executes just before stim is made visible.
 function stim_OpeningFcn(hObject, eventdata, handles, varargin)
@@ -75,6 +63,19 @@ guidata(hObject, handles);
 
 % UIWAIT makes stim wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
+
+% Create output directory if it doesn't exist already
+p = mfilename('fullpath'); % get  full path and name of the file
+f = mfilename(); % get name of file
+p = p(1:end-length(f)); % delete name of the file in order to obtain just the full path
+p1 = strcat(p,'output'); % location of the output directory
+if ~exist(p1, 'dir')
+    mkdir(p1) % create if it doesn't exists
+end
+
+% add stimuli/ and experiments/ to the MATLAB path
+addpath(strcat(p,'stimuli'))
+addpath(strcat(p,'experiments'))
 
 global EXPERIMENT;
 global HOME;

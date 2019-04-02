@@ -3,8 +3,6 @@ function ld_menuHand(param)
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-nextMenu = 1;
-
 while nextMenu
     if param.language == 1 % langue: français
         choice = menu('Choix de main:','Main gauche','Main Droite','Quitter');
@@ -21,3 +19,5 @@ while nextMenu
     end
     ld_menuCond(param)
 end
+
+clear;

@@ -36,35 +36,8 @@ while nextMenu
             param.task = ['Task - ', 'Testing'];
             % to implement yet
             ld_task(param);
-        case 6
+        case 5
             break;
     end
+    
 end
-
-
-% while nextMenu
-%     choice = menu(...
-%                    strcat('Menu - ', D_EXPERIMENT),...
-%                    'Rest', ...  
-%                    'Verification',...
-%                    'Intro',...
-%                    'Task',...
-%                    'Quit'...
-%                    );
-%     sessionName = D_EXPERIMENT;
-%     switch choice
-%         case 1
-%             ld_rest(param);
-%         case 2           
-%             param.task = ['Verification - ', sessionName];
-%             ld_verification(param);        
-%         case 3
-%             param.task = ['Intro - ', sessionName];
-%             ld_intro(param);
-%         case 4
-%             param.task = ['Task - ', sessionName];
-%             ld_task(param);
-%         case 5
-%             break;
-%     end
-% end
